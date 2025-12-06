@@ -1,4 +1,4 @@
-# RL-PRUNER: STRUCTURED PRUNING USING REINFORCEMENT LEARNING FOR CNN COMPRESSION AND ACCELERATION
+# RL-Pruner: Structured Pruning Using Reinforcement Learning for CNN Compression and Acceleration
 강화학습으로 레이어별 프루닝 분포를 자동 학습하여 CNN을 구조적으로 압축 & 가속하는 방법
 Residual / Concat / Flatten / SE 모듈까지 안전하게 채널을 제거하도록 텐서 의존성 그래프를 자동 구축하며, Taylor 기준으로 필터 중요도를 평가해 정확도 손실을 최소화합니다.
 <br/>
