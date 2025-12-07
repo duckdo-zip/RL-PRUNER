@@ -4,6 +4,9 @@
 This presentation introduces two reinforcement learning–based approaches for improving the efficiency of vision models. **RL-Pruner** learns the layer-wise importance in CNNs to determine optimal pruning ratios, significantly reducing computation while preserving accuracy. **AgentViT** evaluates patch importance in ViTs using DDQN to filter out unnecessary patches, effectively reducing training costs.  Both methods automate model optimization by allowing RL to decide “what to keep” in the network.
 
 <img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/0acb71bc-92ca-49df-9569-018f0054d043" />
+<br/>
+
+[발표자료: 20조 강화지 팀 120250668_오승훈 120250672_정강현.pdf](https://github.com/user-attachments/files/24016363/20.120250668_.120250672_.pdf)
 
 ---
 
@@ -215,6 +218,6 @@ Vision Transformer(ViT)는 뛰어난 표현력을 가지지만, 모든 패치 �
 
 <img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/65f28b44-9065-4126-853c-dd51718193e6" />
 
-## <a id="aps-references"></a>6️⃣ References
+## <a id="aps-references"></a>5️⃣ References
 * [Adaptive patch selection to improve Vision Transformers through Reinforcement Learning](https://link.springer.com/article/10.1007/s10489-025-06516-z)
 * [https://github.com/DavideTraini/RL-for-ViT](https://github.com/DavideTraini/RL-for-ViT)
