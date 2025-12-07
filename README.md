@@ -3,7 +3,8 @@
 <br/>
 This presentation introduces two reinforcement learning–based approaches for improving the efficiency of vision models. **RL-Pruner** learns the layer-wise importance in CNNs to determine optimal pruning ratios, significantly reducing computation while preserving accuracy. **AgentViT** evaluates patch importance in ViTs using DDQN to filter out unnecessary patches, effectively reducing training costs.  Both methods automate model optimization by allowing RL to decide “what to keep” in the network.
 
-<img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/2c759310-843a-417e-a16c-796b60dd4fac" />
+<img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/0acb71bc-92ca-49df-9569-018f0054d043" />
+
 
 ---
 
@@ -14,8 +15,7 @@ This presentation introduces two reinforcement learning–based approaches for i
 2. [2️⃣ Environment & Dataset](#rlpruner-envdata)
 3. [3️⃣ Method](#rlpruner-method)
 4. [4️⃣ Process](#rlpruner-process)
-5. [5️⃣ Structure](#rlpruner-structure)
-6. [6️⃣ References](#rlpruner-references)
+5. [5️⃣ References](#rlpruner-references)
 
 ---
 
@@ -26,8 +26,7 @@ This presentation introduces two reinforcement learning–based approaches for i
 2. [2️⃣ Environment & Dataset](#aps-envdata)
 3. [3️⃣ Method](#aps-method)
 4. [4️⃣ Process](#aps-process)
-5. [5️⃣ Structure](#aps-structure)
-6. [6️⃣ References](#aps-references)
+5. [5️⃣ References](#aps-references)
 
 ---
 
@@ -37,7 +36,8 @@ RL-Pruner는 강화학습을 활용하여 CNN 레이어별 프루닝 비율을 �
 
 RL-Pruner is a structured pruning method that employs reinforcement learning to automatically learn the optimal layer-wise pruning ratios in CNNs. It first constructs a Dependency Graph by analyzing tensor flows and initializes a sparsity distribution. Then, it samples various actions by adding Gaussian noise, prunes the model accordingly, and evaluates each compressed model using rewards based on accuracy, FLOPs reduction, and parameter reduction. The policy is updated through a replay buffer, and channel selection is guided by the Taylor criterion. Finally, Knowledge Distillation is applied to recover performance degradation. This approach achieves both high compression rates and strong accuracy retention.
 
-<img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/e343a86e-756a-4d44-87c0-706bb96e29bd" />
+<img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/bcdff279-e362-4193-b72d-32084674d504" />
+
 
 ## <a id="rlpruner-overview"></a>1️⃣ Overview
 ### 1-1. 연구 배경
@@ -58,10 +58,13 @@ CNN은 높은 정확도를 가지지만 연산량·메모리 사용량이 커 �
 * 단계별 프루닝 진행 후 교사 모델로 성능 회복
 
 ## <a id="rlpruner-envdata"></a>2️⃣ Environment & Dataset
-<img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/f2b3c296-688f-4134-9bad-63af94315de8" />
+<img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/512dacde-96c1-424b-9e9c-cc9259dee619" />
+
 
 
 ## <a id="rlpruner-method"></a>3️⃣ Method
+<img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/f7b8267f-1d77-4100-abb3-f7158625d82c" />
+
 ### 3-1. RL 알고리즘
 | 항목 (Item)      | 설명 (Description)                                      |
 |------------------|----------------------------------------------------------|
@@ -72,12 +75,14 @@ CNN은 높은 정확도를 가지지만 연산량·메모리 사용량이 커 �
 | **탐색 (Exploration)**| ε-greedy: 초기 크게 → 점진적 감소                           |
 
 
-<img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/f4f28cd4-a8b4-428c-b093-ce9ddff50310" />
+<img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/70bb41d6-0c91-4926-9752-69c43a1b558b" />
+
 <br/>
 <br/>
 
 
-<img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/405351e8-d044-49d1-aa54-3d3869b0dc45" />
+<img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/6e44fb88-72f3-45db-acc4-cb0e6b7080d7" />
+
 <br/>
 <br/>
 
@@ -100,9 +105,12 @@ Taylor 기준으로 중요도 평가
 (옵션) KD로 성능 회복
 <br/>
 
-<img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/d5e2efe6-02bd-41a5-ad9f-bcd8d9e251ec" />
-<img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/6eb1868e-57e5-4d50-9a62-fa556234fc80" />
-<img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/2751168d-fd14-4565-b611-146435fe1fa4" />
+<img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/c329e6ad-8750-4edd-8f63-f86449693a7f" />
+
+<img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/97a9adab-2fe5-4056-ad51-6e222b133b4c" />
+
+<img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/3b301720-2b75-45b8-bcc6-9944664987bf" />
+
 
 
 ### 4-2. 대표 결과 요약
@@ -113,6 +121,7 @@ Taylor 기준으로 중요도 평가
 | **ResNet-56**                | 50% 이상       | 성능 급락 (채널 수가 적은 구조적 특성)                      |
 | **비교**                     | DepGraph / GReg / GNN-RL 대비 | 25%, 50%, 75% sparsity 모두 정확도 우위 |
 <br/>
+<img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/cf191837-725e-4e2e-adeb-549d86646764" />
 
 ### 4-3. 하이퍼파라미터 예시
 * Noise variance: v = 0.04
@@ -132,31 +141,12 @@ Taylor 기준으로 중요도 평가
 다단계 프루닝 + DG 생성으로 시간/자원 요구 큼
 얇은 네트워크(ResNet-56 등)는 sparsity 반올림이 성능에 영향
 목적(정확도 vs 속도)에 따라 α, β, ε, v 튜닝 필요
+<img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/f911a323-a4c8-4958-a3d1-2bf45ed852ec" />
 
-<img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/9e79e0a9-257b-4012-84d7-5171dd66f29f" />
+<img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/ae8c6b5d-278a-4ed1-a0b7-535e770e8645" />
 
 
-## <a id="rlpruner-structure"></a>5️⃣ Structure
-```
-RL-PRUNER: STRUCTURED PRUNING USING REINFORCEMENT LEARNING FOR CNN COMPRESSION AND ACCELERATION 
-
-├── LICENSE
-├── README.md
-├── code
-│   ├── test
-│   │   ├── test.ipynb
-│   │   ├── test.ipynb  
-│   │   ├── test.ipynb
-│   │   ├── test.ipynb  
-│   │   └── test.ipynb
-│   │   
-│   ├── test.py
-│   ├── test.ipynb
-│   └── test.py
-
-```
-
-## <a id="rlpruner-references"></a>6️⃣ References
+## <a id="rlpruner-references"></a>5️⃣ References
 * [RL-Pruner: Structured Pruning Using Reinforcement Learning for CNN Compression and Acceleration](https://arxiv.org/pdf/2411.06463)
 * [https://github.com/Beryex/RLPruner-CNN](https://github.com/Beryex/RLPruner-CNN)
 
@@ -183,10 +173,7 @@ AgentViT is a structural pruning framework where a DDQN agent selects important 
 내용 작성…
 
 ## <a id="aps-process"></a>4️⃣ Process
-<img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/f1bfdd96-cb8a-411d-826b-908398d91571" />
-<img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/57ef8b4c-ac4e-4b47-88b3-9d4f486de39c" />
-<img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/157c62c3-9e72-4e7a-918f-0fd7bad11513" />
-<img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/fff972d4-0430-4b44-ab6e-ce122ba2318f" />
+
 
 
 ## <a id="aps-structure"></a>5️⃣ Structure
