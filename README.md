@@ -163,22 +163,28 @@ AgentViT is a structural pruning framework where a DDQN agent selects important 
 
 
 ## <a id="aps-overview"></a>1️⃣ Overview
-내용 작성…
+<img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/0e4075e8-eb9a-428a-b4e7-c0cb57f825fc" />
+
 
 ## <a id="aps-envdata"></a>2️⃣ Environment & Dataset
-<img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/d7d2dd0a-f35e-4a7d-9018-84f75271271d" />
+<img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/0bdc46c5-c69f-4ebb-9825-6ccafe56708b" />
 
 
 ## <a id="aps-method"></a>3️⃣ Method
-내용 작성…
+<img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/3720add3-62b9-447d-8072-9ba5b9781571" />
+<img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/b2bbf401-48f4-4a42-af26-bb5d759e9a11" />
+<img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/9e19fa4b-017f-4f1b-9204-bff3e622de57" />
+<img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/db99ed21-1042-4569-ad39-e1401e82bdc6" />
+<img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/da1a524c-4430-4952-b8f2-98acc713f001" />
+
 
 ## <a id="aps-process"></a>4️⃣ Process
+<img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/18f83297-e11f-401f-9fd7-0755d48e6efd" />
 
 
+<img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/9289e0f6-bf45-452c-ac4b-6f2c698b970d" />
 
-## <a id="aps-structure"></a>5️⃣ Structure
-<img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/f13162c8-caa5-43bd-896e-569070cf4a89" />
-
+<img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/65f28b44-9065-4126-853c-dd51718193e6" />
 
 ## <a id="aps-references"></a>6️⃣ References
 * [Adaptive patch selection to improve Vision Transformers through Reinforcement Learning](https://link.springer.com/article/10.1007/s10489-025-06516-z)
