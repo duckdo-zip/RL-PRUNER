@@ -140,20 +140,57 @@ Taylor 기준으로 중요도 평가
 ```
 RL-PRUNER: STRUCTURED PRUNING USING REINFORCEMENT LEARNING FOR CNN COMPRESSION AND ACCELERATION 
 
-├── LICENSE
-├── README.md
-├── code
-│   ├── test
-│   │   ├── test.ipynb
-│   │   ├── test.ipynb  
-│   │   ├── test.ipynb
-│   │   ├── test.ipynb  
-│   │   └── test.ipynb
-│   │   
-│   ├── test.py
-│   ├── test.ipynb
-│   └── test.py
-
+RLPruner-CNN/
+├── assets/                         # 그림, 실험 결과, 문서 자료
+│   ├── CNN_method_description.jpg
+│   ├── experiments_result.jpg
+│   └── README.md
+│
+├── checkpoint/                     # 모델 체크포인트 저장 경로
+│
+├── compressed_model/               # 압축(Pruned)된 모델 저장 경로
+│
+├── conf/                           # 환경 설정 파일들
+│   ├── __init__.py
+│   └── global_settings.py
+│
+├── data/                           # CIFAR 데이터셋
+│   ├── cifar-100-python/
+│   └── cifar-100-python.tar.gz
+│
+├── log/                            # 학습 로그 및 wandb 로그 등이 저장되는 폴더
+│
+├── models/                         # 모델 아키텍처 모음
+│   ├── __pycache__/
+│   ├── densenet.py
+│   ├── googlenet.py
+│   ├── mobilenentv3.py
+│   ├── resnet_tiny.py
+│   ├── resnet.py
+│   └── vgg.py
+│
+├── pretrained_model/               # 사전학습(pretrained) 모델 파일들
+│   ├── googlenet_cifar100_pretrained.pth
+│   ├── mobilenetv3_large_cifar100_pretrained.pth
+│   ├── resnet56_cifar100_pretrained.pth
+│   └── vgg19_cifar100_pretrained.pth
+│
+├── scripts/                        # 실행 스크립트 (.sh)
+│   ├── evaluate.sh
+│   ├── example.sh
+│   ├── flexible.sh
+│   ├── prune.sh
+│   └── train.sh
+│
+├── utils/                          # 유틸리티 모듈
+│   └── wandb/                      # wandb 실행 관련 서브 폴더
+│
+├── avg_prune_prob_vgg19.png
+├── avg_prune_prob.png
+├── compress.py                     # 모델 압축(Pruning) 메인 코드
+├── evaluate.py                     # 모델 평가
+├── requirements.txt
+└── train.py                        # 학습 엔트리 포인트
 ```
 
 ## <a id="rlpruner-references"></a>6️⃣ References
