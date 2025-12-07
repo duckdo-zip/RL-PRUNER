@@ -5,7 +5,6 @@ This presentation introduces two reinforcement learning–based approaches for i
 
 <img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/0acb71bc-92ca-49df-9569-018f0054d043" />
 
-
 ---
 
 # RL-PRUNER: Structured Pruning Using Reinforcement Learning for CNN Compression and Acceleration
@@ -38,6 +37,11 @@ RL-Pruner is a structured pruning method that employs reinforcement learning to 
 
 <img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/bcdff279-e362-4193-b72d-32084674d504" />
 
+### Model
+1. vgg19 : https://drive.google.com/file/d/1qCEDWObI_bqOHuwOF4qxvNm7bKstqW0D/view?usp=drive_link
+2. resnet56 : https://drive.google.com/file/d/1yi204gibRWU4CbBrCcCL_MIGpDwU5RUw/view?usp=drive_link
+3. mobilenet : https://drive.google.com/file/d/1nvJsm8EzU8Kab8iGfi66SNOt5QlT99p6/view?usp=drive_link
+4. googlenet : https://drive.google.com/file/d/1iZZqawmvVL0PaqN0OPl-SGYXPyd0O9qm/view?usp=drive_link
 
 ## <a id="rlpruner-overview"></a>1️⃣ Overview
 ### 1-1. 연구 배경
@@ -163,8 +167,33 @@ AgentViT is a structural pruning framework where a DDQN agent selects important 
 
 
 ## <a id="aps-overview"></a>1️⃣ Overview
-<img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/0e4075e8-eb9a-428a-b4e7-c0cb57f825fc" />
+### 1-1. 연구 배경
+Vision Transformer(ViT)는 뛰어난 표현력을 가지지만, 모든 패치 쌍에 대한 self-attention 계산으로 인해 연산량·메모리 비용이 급격히 증가합니다. 기존 Token Pruning·Merging 방식은 패치 수를 줄여 효율화하지만, 고정된 토큰 수/threshold 기반의 정적 구조로 인해 이미지 난이도나 패치 중요도 변화를 반영하지 못해 비효율이 발생합니다. 따라서, 입력 이미지마다 필요한 패치 수를 동적으로 조절하며 정확도 손실 없이 연산량을 크게 줄일 수 있는 새로운 선택 메커니즘이 필요했습니다.
 
+
+<br/>
+
+### 1-2. 핵심 기여
+* RL 기반 패치 중요도 학습 <br/>
+: 첫 attention layer의 평균 attention을 상태(state)로 사용하여, DDQN이 패치별 중요도를 학습하고 선택하도록 설계.
+
+* Q-learning 기반 동적 Patch Selection 정책 <br/>
+: Q-value 분포를 기준으로 평균보다 높은 가치의 패치만 선택하는 정책을 학습하여 토큰 수를 자동 조절.
+
+* 사용자 의도 반영 가능한 Reward 설계 <br/>
+: Loss 기반 보상 + 선택 패치 수 기반 보상을 조합해 정확도와 효율성의 trade-off를 직접 조절 가능.
+
+* 추가 파라미터 삽입 없이 ViT 구조와 독립적으로 적용 가능 <br/>
+: 외부 RL agent 구조로, ViT 내부 구조를 변경하지 않고도 patch pruning 수행.
+
+* Dynamic Token Count 조절 능력 <br/>
+: 각 배치의 난이도에 따라 목표 패치 수보다 적거나 많이 선택하는 '적응적 토큰 수 조절' 기능 구현.
+
+* 다양한 ViT·SimpleViT에 통합 가능 <br/>
+: CLS token이 없는 SimpleViT에도 적용됨을 실험으로 확인하여 범용성 확보.
+
+* Training Time·GFLOPs·FPS 개선 검증 <br/>
+: CIFAR10·FMNIST·Imagenette+ 실험에서 정확도 유지 또는 향상하며 GFLOPs 50% 감소, FPS 90% 증가를 달성.
 
 ## <a id="aps-envdata"></a>2️⃣ Environment & Dataset
 <img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/0bdc46c5-c69f-4ebb-9825-6ccafe56708b" />
