@@ -6,6 +6,9 @@ Residual / Concat / Flatten / SE 모듈까지 안전하게 채널을 제거하�
 Reinforcement learning is employed to automatically learn the layer-wise pruning distribution, enabling structured compression and acceleration of CNNs.
 The method constructs a tensor dependency graph to safely prune channels across Residual, Concat, Flatten, and SE modules, while filter importance is estimated using the Taylor expansion criterion to minimize accuracy loss.
 
+<img width="3200" height="1800" alt="image" src="https://github.com/user-attachments/assets/961a9990-5361-4205-8c66-3e2c1084fb02" />
+
+
 ### Table of Contents
 
 1. [Overview](#1️⃣-overview)
